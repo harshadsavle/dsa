@@ -48,7 +48,7 @@ class LinkedList:
         return temp.value
     
 # a=LinkedList(1)
-# # a.append(3)
+# # a.append(3)  
 # a.print_list()
 # a.append(2)    
 
@@ -108,10 +108,56 @@ class LinkedList:
 # my_linked_list.append(3)
 
 # print(my_linked_list.get(2))
-    def set_value(self,value,index):
-        self.value=value
-        self.index=index
+
+# for set_value this is the approach 1
+    def set_value(self,index,value):
+        temp=self.head
+        if index<0 or index>self.length:
+            return None
+        for _ in range(index):
+            temp=temp.next
+        if temp:
+            temp.value=value
+            return True
+        return False
+
+#for set_value this is the approach 2
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
+     
+
+
+# my_linked_list = LinkedList(11)
+# my_linked_list.append(3)
+# my_linked_list.append(23)
+# my_linked_list.append(7)
+
+# print('LL before set_value():')
+# my_linked_list.print_list()
+
+# my_linked_list.set_value(1,4)
+
+# print('\nLL after set_value():')
+# my_linked_list.print_list()
+
+    def insert(self,index,value):
         
+    
+my_linked_list =LinkedList(11)
+my_linked_list.append(1)
+my_linked_list.append(3)
+my_linked_list.append(27)
+
+my_linked_list.print_list()
+my_linked_list.insert(1,100)
+    
+
+
+
 
 
 
